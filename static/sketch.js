@@ -3,14 +3,14 @@
 // Mac: Cmd+Shift+R
 
 var path = "/static/music/happy.mp3"
-var slider
-
 var song;
 var button;
+var amplitude;
 
 function setup() {
   createCanvas(200, 200);
   song = loadSound(path, loaded);
+  amp = new p5.Amplitude();
   background(51);
 }
 
@@ -29,3 +29,12 @@ function loaded() {
     button = createButton("play");
     button.mousePressed(togglePlaying);
 }
+
+function draw(){
+    background(51);
+    var vol = amp.getLevel();
+    fill(255,0,255);
+    ellipse(width/2, height/2, vol*1000, vol*1000);
+}
+
+console.log("hi")
