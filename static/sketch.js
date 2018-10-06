@@ -5,17 +5,27 @@
 var path = "/static/music/happy.mp3"
 var slider
 
+var song;
+var button;
+
 function setup() {
-    createCanvas(200, 200)
-    song = loadSound(path, loaded)
-    slider = createSlider(0, 1, .5, .01)
+  createCanvas(200, 200);
+  song = loadSound(path, loaded);
+  background(51);
 }
 
-function loaded() { // song loading callback
-    song.play()
+function togglePlaying() {
+  if (!song.isPlaying()) {
+    song.play();
+    song.setVolume(0.3);
+    button.html("pause");
+  } else {
+    song.stop();
+    button.html("play");
+  }
 }
 
-function draw() {
-    background(0)
-    song.setVolume(slider.value())
+function loaded() {
+    button = createButton("play");
+    button.mousePressed(togglePlaying);
 }
