@@ -41,7 +41,7 @@
 // Windows: Fn+Ctrl+F5
 // Mac: Cmd+Shift+R
 
-var path = "/static/music/internetgirl.mp3"
+var path = "/static/music/inyourarms.mp3"
 var song;
 var button;
 var amplitude;
