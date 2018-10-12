@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "helloo jade! Go to /amplitudeGraph or /frequency to see some cool stuff ... wow!"
+    return "jade tries commit Go to /amplitudeGraph or /frequency to see some cool stuff ... wow!"
 
 @app.route('/amplitudeGraph')
 def amplitudeGraph():
