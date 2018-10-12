@@ -37,10 +37,10 @@ function draw() {
   var spectrum = fft.analyze();
   //console.log(spectrum);
   //stroke(255);
-  noStroke();
+  noFill();
   translate(width / 2, height / 2);
   //beginShape();
-  
+
   for(var j = 0; j < 4; j++){
     for (var i = 0; i < spectrum.length; i++) {
       var angle = map(i, 0, spectrum.length, 0, 90);
